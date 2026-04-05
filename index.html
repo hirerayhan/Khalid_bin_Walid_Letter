@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter of Khalid bin Al-Waleed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Anek+Bangla:wght@400;600&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'islamic-green': '#0f4c3a',
+                        'islamic-gold': '#d4af37',
+                        'sand': '#fdfbf7',
+                    },
+                    fontFamily: {
+                        'arabic': ['Amiri', 'serif'],
+                        'bengali': ['"Anek Bangla"', 'sans-serif'],
+                        'english': ['Cinzel', 'serif'],
+                        'body': ['system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f4f1ea;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .arch-card {
+            border-top-left-radius: 3rem;
+            border-top-right-radius: 3rem;
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-500 { animation-delay: 500ms; }
+        
+        .text-glow {
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+
+    <div class="max-w-4xl w-full space-y-12">
+        
+        <!-- Header Section -->
+        <header class="text-center space-y-4 opacity-0 animate-fade-in-up text-islamic-green relative">
+            <div class="absolute inset-0 flex justify-center items-center -z-10">
+                <div class="w-48 h-48 bg-islamic-gold/10 rounded-full blur-2xl animate-pulse-slow"></div>
+            </div>
+            <h1 class="font-arabic text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-glow">خَالِد بن الوَلِيد</h1>
+            <h2 class="font-english text-xl md:text-2xl text-islamic-gold font-bold tracking-wider">(Khalid bin Al-Waleed)</h2>
+            <div class="w-24 h-1 bg-islamic-gold mx-auto my-4 rounded"></div>
+            <h3 class="font-arabic text-2xl md:text-3xl font-semibold mt-4">رِسَالَةُ خَالِدٍ إِلَى مَرَازِبَةِ فَارِسَ</h3>
+            <p class="font-english text-sm md:text-base text-gray-600 italic">Message of Khalid to the Marzubans [Governors] of Persia</p>
+        </header>
+
+        <!-- Arabic Section -->
+        <section class="opacity-0 animate-fade-in-up delay-100 transform transition duration-500 hover:scale-[1.02]">
+            <div class="bg-white shadow-xl arch-card border-t-4 border-islamic-green overflow-hidden relative">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-islamic-gold to-transparent opacity-50"></div>
+                <div class="p-8 md:p-10 text-center">
+                    <span class="inline-block px-4 py-1 rounded-full bg-islamic-green/10 text-islamic-green font-english text-xs font-bold tracking-widest uppercase mb-6 border border-islamic-green/20">Arabic Transcription</span>
+                    <p class="font-arabic text-2xl md:text-4xl leading-loose md:leading-[3rem] text-right text-gray-900" dir="rtl">
+                        سَلَامٌ عَلَى مَنِ اتَّبَعَ الْهُدَى، أَمَّا بَعْدُ: فَالْحَمْدُ لِلَّهِ الَّذِي فَضَّ خِدْمَتَكُمْ، وَسَلَبَ مُلْكَكُمْ، وَوَهَّنَ كَيْدَكُمْ، وَإِنَّهُ مَنْ صَلَّى صَلَاتَنَا، وَاسْتَقْبَلَ قِبْلَتَنَا، وَأَكَلَ ذَبِيحَتَنَا، فَذَلِكَ الْمُسْلِمُ الَّذِي لَهُ مَا لَنَا، وَعَلَيْهِ مَا عَلَيْنَا.
+                        <br><br>
+                        أَمَّا بَعْدُ: فَإِذَا جَاءَكُمْ كِتَابِي فَابْعَثُوا إِلَيَّ بِالرَّهْنِ، وَاعْتَقِدُوا مِنِّي الذِّمَّةَ، وَأَدُّوا إِلَيَّ الْجِزْيَةَ، وَإِلَّا فَوَاللَّهِ الَّذِي لَا إِلَهَ غَيْرُهُ، لَأَبْعَثَنَّ إِلَيْكُمْ قَوْمًا يُحِبُّونَ الْمَوْتَ كَمَا تُحِبُّونَ الْحَيَاةَ، وَيَرْغَبُونَ فِي الْآخِرَةِ كَمَا تَرْغَبُونَ فِي الدُّنْيَا.
+                        <br><br>
+                        <span class="text-islamic-gold">فَلَمَّا قَرَءُوا الْكِتَابَ أَخَذُوا يَتَعَجَّبُونَ.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bengali Section -->
+        <section class="opacity-0 animate-fade-in-up delay-300 transform transition duration-500 hover:scale-[1.02]">
+            <div class="bg-islamic-green text-sand shadow-xl rounded-2xl border border-islamic-gold/30 overflow-hidden relative">
+                <div class="p-8 md:p-10">
+                    <div class="flex items-center justify-between mb-6 border-b border-sand/20 pb-4">
+                        <span class="font-bengali text-lg font-semibold text-islamic-gold">বাংলা অনুবাদ</span>
+                    </div>
+                    <div class="font-bengali text-lg md:text-xl leading-relaxed space-y-4 text-justify text-sand/90">
+                        <p>যারা হেদায়েতের অনুসরণ করে তাদের ওপর শান্তি বর্ষিত হোক। অতঃপর: সমস্ত প্রশংসা আল্লাহর জন্য, যিনি তোমাদের সেবকদের ছিন্নভিন্ন করে দিয়েছেন, তোমাদের রাজত্ব ছিনিয়ে নিয়েছেন এবং তোমাদের ষড়যন্ত্রকে দুর্বল করে দিয়েছেন। নিশ্চয়ই যে ব্যক্তি আমাদের মতো সালাত আদায় করে, আমাদের কিবলার দিকে মুখ করে এবং আমাদের জবাই করা প্রাণীর গোশত খায়, সে-ই মুসলিম। আমাদের যা অধিকার আছে, তারও তা-ই অধিকার; আর আমাদের ওপর যা দায়িত্ব আছে, তার ওপরও তা-ই দায়িত্ব।</p>
+                        <p>অতঃপর: যখন আমার এই পত্র তোমাদের কাছে পৌঁছাবে, তখন আমার কাছে জিম্মি (নিরাপত্তার গ্যারান্টি হিসেবে লোক) পাঠাও, আমার কাছ থেকে নিরাপত্তার প্রতিশ্রুতি (জিম্মাহ) গ্রহণ করো এবং আমাকে জিযিয়া প্রদান করো। অন্যথায়, সেই আল্লাহর কসম, যিনি ছাড়া আর কোনো মাবুদ নেই, আমি তোমাদের বিরুদ্ধে এমন এক সম্প্রদায়কে পাঠাব, যারা মৃত্যুকে ততটাই ভালোবাসে যতটা তোমরা জীবনকে ভালোবাসো, এবং তারা আখেরাতকে ততটাই কামনা করে যতটা তোমরা দুনিয়াকে কামনা করো।</p>
+                        <p class="font-semibold text-islamic-gold">অতঃপর যখন তারা পত্রটি পড়ল, তখন তারা চরম বিস্ময়াভিভূত হলো।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- English Section -->
+        <section class="opacity-0 animate-fade-in-up delay-500 transform transition duration-500 hover:scale-[1.02]">
+            <div class="bg-white shadow-xl rounded-2xl border-l-4 border-islamic-gold overflow-hidden">
+                <div class="p-8 md:p-10">
+                    <div class="flex items-center mb-6">
+                        <span class="inline-block px-4 py-1 rounded bg-gray-100 text-gray-600 font-english text-xs font-bold tracking-widest uppercase">English Translation</span>
+                    </div>
+                    <div class="font-body text-base md:text-lg leading-relaxed space-y-4 text-gray-700">
+                        <p>"Peace be upon him who follows the guidance. To proceed: Praise be to Allah who has dispersed your attendants, stripped you of your kingdom, and weakened your plot. Verily, whoever prays our prayer, faces our Qiblah (direction of prayer), and eats our slaughtered meat, then that is a Muslim who has the same rights as we have, and the same obligations as we have.</p>
+                        <p>To proceed: When my letter reaches you, send me hostages, secure from me the covenant of protection (Dhimmah), and pay me the Jizyah (tax). Otherwise, by Allah, other than Whom there is no deity, I will surely send to you a people who love death just as you love life, and who desire the Hereafter just as you desire this world."</p>
+                        <p class="italic font-medium text-islamic-green">So when they read the letter, they began to marvel (were astonished).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-6 opacity-0 animate-fade-in-up delay-500">
+            <svg class="w-8 h-8 mx-auto text-islamic-gold opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg>
+        </footer>
+
+    </div>
+
+</body>
+</html>
