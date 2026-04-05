@@ -73,9 +73,21 @@
             text-align-last: center;
         }
 
+        @media (max-width: 640px) {
+            .text-justify-center-last {
+                text-align: center;
+                text-align-last: center;
+            }
+        }
+
         /* Subtle scrollbar for elegant look */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
+        }
+        @media (min-width: 768px) {
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
         }
         ::-webkit-scrollbar-track {
             background: #0b1121;
@@ -89,13 +101,13 @@
         }
     </style>
 </head>
-<body class="min-h-screen font-body text-slate-300 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center relative overflow-x-hidden">
+<body class="min-h-screen font-body text-slate-300 py-8 md:py-12 px-3 sm:px-6 lg:px-8 flex flex-col items-center justify-center relative overflow-x-hidden">
 
-    <!-- Hidden Audio Element: Tumi ekhane tomar github er raw audio link dibe -->
+    <!-- Hidden Audio Element -->
     <audio id="khalid-audio" src="https://raw.githubusercontent.com/hirerayhan/Khalid_bin_Walid_Letter/main/Khalid%20ibn%20al-Walids%20letter%20to%20the%20Persian%20King%20%20islamichistory%20%20islam%20%20shortvideo%20%20muslim.mp3" preload="none"></audio>
 
     <!-- Ramadan Theme Decorations (Background Layer) -->
-    <div class="fixed -top-10 -right-10 w-64 h-64 md:w-[22rem] md:h-[22rem] opacity-[0.08] pointer-events-none z-0">
+    <div class="fixed -top-10 -right-10 w-48 h-48 md:w-[22rem] md:h-[22rem] opacity-[0.05] md:opacity-[0.08] pointer-events-none z-0">
         <svg viewBox="0 0 100 100" class="text-saas-cyan w-full h-full animate-glow" fill="currentColor">
             <!-- Crescent Moon -->
             <path d="M 55 15 A 35 35 0 1 0 85 55 A 25 25 0 1 1 55 15 Z" />
@@ -105,15 +117,15 @@
     </div>
 
     <!-- Hanging Lanterns -->
-    <div class="fixed top-0 left-4 md:left-20 flex space-x-6 md:space-x-10 opacity-15 pointer-events-none z-0">
-        <svg class="w-10 h-40 md:h-48 text-saas-cyan animate-swing" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
+    <div class="fixed top-0 left-2 md:left-20 flex space-x-3 md:space-x-10 opacity-10 md:opacity-15 pointer-events-none z-0">
+        <svg class="w-6 h-24 md:w-10 md:h-48 text-saas-cyan animate-swing" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="12" y1="0" x2="12" y2="35" stroke-opacity="0.5"/>
             <path d="M8 35 H16 L18 42 V55 L16 62 H8 L6 55 V42 Z" fill="rgba(6, 182, 212, 0.1)"/>
             <path d="M6 42 H18 M6 55 H18" />
             <line x1="12" y1="62" x2="12" y2="68" />
             <path d="M9 68 H15 L12 73 Z" fill="currentColor"/>
         </svg>
-        <svg class="w-8 h-32 md:h-36 text-saas-cyan animate-swing mt-8" style="animation-duration: 4s;" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg class="w-5 h-20 md:w-8 md:h-36 text-saas-cyan animate-swing mt-4 md:mt-8" style="animation-duration: 4s;" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="12" y1="0" x2="12" y2="25" stroke-opacity="0.5"/>
             <path d="M8 25 H16 L18 30 V40 L16 45 H8 L6 40 V30 Z" fill="rgba(6, 182, 212, 0.1)"/>
             <path d="M6 30 H18 M6 40 H18" />
@@ -126,65 +138,65 @@
     <main class="max-w-5xl w-full z-10 animate-fade-in flex flex-col items-center">
         
         <!-- The SaaS Style Card Frame -->
-        <div class="glass-panel rounded-3xl p-8 sm:p-12 md:p-16 w-full relative mt-8">
+        <div class="glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-16 w-full relative mt-4 md:mt-8">
             
             <!-- Grand Header Block -->
-            <div class="text-center mb-10 pb-8 border-b border-slate-800/60 relative">
+            <div class="text-center mb-8 md:mb-10 pb-6 md:pb-8 border-b border-slate-800/60 relative">
                 <!-- Subtle background glow for the header -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-saas-cyan/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-48 md:h-48 bg-saas-cyan/10 rounded-full blur-2xl md:blur-3xl -z-10 pointer-events-none"></div>
 
-                <h1 class="font-arabic text-5xl md:text-6xl text-saas-cyan mb-4 animate-glow" style="line-height: normal;">خَالِد بن الوَلِيد</h1>
-                <h2 class="font-body font-bold text-lg md:text-xl text-islamic-gold tracking-[0.2em] uppercase mb-8">(KHALID BIN AL-WALEED)</h2>
+                <h1 class="font-arabic text-4xl sm:text-5xl md:text-6xl text-saas-cyan mb-3 md:mb-4 animate-glow" style="line-height: normal;">خَالِد بن الوَلِيد</h1>
+                <h2 class="font-body font-bold text-base sm:text-lg md:text-xl text-islamic-gold tracking-[0.15em] md:tracking-[0.2em] uppercase mb-6 md:mb-8">(KHALID BIN AL-WALEED)</h2>
 
-                <div class="w-16 h-1 bg-islamic-gold mx-auto mb-8 rounded-full opacity-80"></div>
+                <div class="w-12 md:w-16 h-1 bg-islamic-gold mx-auto mb-6 md:mb-8 rounded-full opacity-80"></div>
 
-                <h3 class="font-arabic text-3xl md:text-4xl text-slate-100 mb-4" style="line-height: normal;">رِسَالَةُ خَالِدٍ إِلَى مَرَازِبَةِ فَارِسَ</h3>
-                <p class="font-body italic text-xs md:text-sm text-slate-400 tracking-[0.15em] uppercase">Message of Khalid to the Marzubans [Governors] of Persia</p>
+                <h3 class="font-arabic text-2xl sm:text-3xl md:text-4xl text-slate-100 mb-3 md:mb-4" style="line-height: normal;">رِسَالَةُ خَالِدٍ إِلَى مَرَازِبَةِ فَارِسَ</h3>
+                <p class="font-body italic text-[10px] sm:text-xs md:text-sm text-slate-400 tracking-[0.1em] md:tracking-[0.15em] uppercase">Message of Khalid to the Marzubans [Governors] of Persia</p>
             </div>
 
             <!-- Custom Audio Player Button -->
-            <div class="flex justify-center mb-12">
-                <button id="play-btn" class="flex items-center gap-3 px-6 py-3 rounded-full glass-panel border border-saas-cyan/20 hover:border-saas-cyan text-saas-cyan transition-all duration-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] group">
-                    <div class="relative flex items-center justify-center w-6 h-6">
+            <div class="flex justify-center mb-8 md:mb-12">
+                <button id="play-btn" class="flex items-center gap-2 md:gap-3 px-5 py-2.5 md:px-6 md:py-3 rounded-full glass-panel border border-saas-cyan/20 hover:border-saas-cyan text-saas-cyan transition-all duration-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] group">
+                    <div class="relative flex items-center justify-center w-5 h-5 md:w-6 md:h-6">
                         <!-- Play Icon -->
-                        <svg id="icon-play" class="w-5 h-5 absolute transition-opacity duration-300 opacity-100" fill="currentColor" viewBox="0 0 24 24">
+                        <svg id="icon-play" class="w-4 h-4 md:w-5 md:h-5 absolute transition-opacity duration-300 opacity-100" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z"/>
                         </svg>
                         <!-- Pause Icon -->
-                        <svg id="icon-pause" class="w-5 h-5 absolute transition-opacity duration-300 opacity-0" fill="currentColor" viewBox="0 0 24 24">
+                        <svg id="icon-pause" class="w-4 h-4 md:w-5 md:h-5 absolute transition-opacity duration-300 opacity-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
                         </svg>
                     </div>
-                    <span id="audio-text" class="font-body font-medium text-sm tracking-widest uppercase">Listen Audio</span>
+                    <span id="audio-text" class="font-body font-medium text-xs md:text-sm tracking-widest uppercase">Listen Audio</span>
                     
                     <!-- Sound Wave Animation (Visible when playing) -->
-                    <div id="sound-waves" class="hidden flex gap-1 items-center ml-2 h-4">
-                        <div class="w-1 h-full bg-saas-cyan rounded-full animate-[bounce_1s_infinite]"></div>
-                        <div class="w-1 h-3/4 bg-saas-cyan rounded-full animate-[bounce_1s_infinite_0.2s]"></div>
-                        <div class="w-1 h-1/2 bg-saas-cyan rounded-full animate-[bounce_1s_infinite_0.4s]"></div>
+                    <div id="sound-waves" class="hidden flex gap-1 items-center ml-1 md:ml-2 h-3 md:h-4">
+                        <div class="w-0.5 md:w-1 h-full bg-saas-cyan rounded-full animate-[bounce_1s_infinite]"></div>
+                        <div class="w-0.5 md:w-1 h-3/4 bg-saas-cyan rounded-full animate-[bounce_1s_infinite_0.2s]"></div>
+                        <div class="w-0.5 md:w-1 h-1/2 bg-saas-cyan rounded-full animate-[bounce_1s_infinite_0.4s]"></div>
                     </div>
                 </button>
             </div>
 
             <!-- Arabic Section -->
-            <div class="mb-12">
-                <p class="font-arabic text-3xl md:text-4xl lg:text-[2.75rem] leading-[4.5rem] md:leading-[6rem] text-slate-100 text-justify-center-last" dir="rtl">
+            <div class="mb-8 md:mb-12">
+                <p class="font-arabic text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] leading-[3.5rem] sm:leading-[4.5rem] md:leading-[6rem] text-slate-100 text-justify-center-last" dir="rtl">
                     سَلَامٌ عَلَى مَنِ اتَّبَعَ الْهُدَى، أَمَّا بَعْدُ: فَالْحَمْدُ لِلَّهِ الَّذِي فَضَّ خِدْمَتَكُمْ، وَسَلَبَ مُلْكَكُمْ، وَوَهَّنَ كَيْدَكُمْ، وَإِنَّهُ مَنْ صَلَّى صَلَاتَنَا، وَاسْتَقْبَلَ قِبْلَتَنَا، وَأَكَلَ ذَبِيحَتَنَا، فَذَلِكَ الْمُسْلِمُ الَّذِي لَهُ مَا لَنَا، وَعَلَيْهِ مَا عَلَيْنَا.
                     <br><br>
                     أَمَّا بَعْدُ: فَإِذَا جَاءَكُمْ كِتَابِي فَابْعَثُوا إِلَيَّ بِالرَّهْنِ، وَاعْتَقِدُوا مِنِّي الذِّمَّةَ، وَأَدُّوا إِلَيَّ الْجِزْيَةَ، وَإِلَّا فَوَاللَّهِ الَّذِي لَا إِلَهَ غَيْرُهُ، لَأَبْعَثَنَّ إِلَيْكُمْ قَوْمًا يُحِبُّونَ الْمَوْتَ كَمَا تُحِبُّونَ الْحَيَاةَ، وَيَرْغَبُونَ فِي الْآخِرَةِ كَمَا تَرْغَبُونَ فِي الدُّنْيَا.
                     <br><br>
-                    <span class="text-saas-cyan block mt-4 font-normal">فَلَمَّا قَرَءُوا الْكِتَابَ أَخَذُوا يَتَعَجَّبُونَ.</span>
+                    <span class="text-saas-cyan block mt-3 md:mt-4 font-normal">فَلَمَّا قَرَءُوا الْكِتَابَ أَخَذُوا يَتَعَجَّبُونَ.</span>
                 </p>
             </div>
 
             <!-- Divider -->
-            <div class="flex items-center justify-center mb-10 opacity-30">
-                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-saas-cyan to-transparent"></div>
+            <div class="flex items-center justify-center mb-6 md:mb-10 opacity-30">
+                <div class="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-saas-cyan to-transparent"></div>
             </div>
 
             <!-- Bengali Section -->
-            <div class="mb-10 max-w-4xl mx-auto">
-                <div class="font-bengali text-lg md:text-xl leading-relaxed space-y-5 text-slate-300 text-center font-light">
+            <div class="mb-6 md:mb-10 max-w-4xl mx-auto">
+                <div class="font-bengali text-base sm:text-lg md:text-xl leading-relaxed space-y-4 md:space-y-5 text-slate-300 text-center font-light">
                     <p>যারা হেদায়েতের অনুসরণ করে তাদের ওপর শান্তি বর্ষিত হোক। অতঃপর: সমস্ত প্রশংসা আল্লাহর জন্য, যিনি তোমাদের সেবকদের ছিন্নভিন্ন করে দিয়েছেন, তোমাদের রাজত্ব ছিনিয়ে নিয়েছেন এবং তোমাদের ষড়যন্ত্রকে দুর্বল করে দিয়েছেন। নিশ্চয়ই যে ব্যক্তি আমাদের মতো সালাত আদায় করে, আমাদের কিবলার দিকে মুখ করে এবং আমাদের জবাই করা প্রাণীর গোশত খায়, সে-ই মুসলিম। আমাদের যা অধিকার আছে, তারও তা-ই অধিকার; আর আমাদের ওপর যা দায়িত্ব আছে, তার ওপরও তা-ই দায়িত্ব।</p>
                     <p>অতঃপর: যখন আমার এই পত্র তোমাদের কাছে পৌঁছাবে, তখন আমার কাছে জিম্মি (নিরাপত্তার গ্যারান্টি হিসেবে লোক) পাঠাও, আমার কাছ থেকে নিরাপত্তার প্রতিশ্রুতি (জিম্মাহ) গ্রহণ করো এবং আমাকে জিযিয়া প্রদান করো। অন্যথায়, সেই আল্লাহর কসম, যিনি ছাড়া আর কোনো মাবুদ নেই, আমি তোমাদের বিরুদ্ধে এমন এক সম্প্রদায়কে পাঠাব, যারা মৃত্যুকে ততটাই ভালোবাসে যতটা তোমরা জীবনকে ভালোবাসো, এবং তারা আখেরাতকে ততটাই কামনা করে যতটা তোমরা দুনিয়াকে কামনা করো।</p>
                     <p class="font-medium text-saas-cyan">অতঃপর যখন তারা পত্রটি পড়ল, তখন তারা চরম বিস্ময়াভিভূত হলো।</p>
@@ -192,13 +204,13 @@
             </div>
 
             <!-- Divider -->
-            <div class="flex items-center justify-center mb-10 opacity-30">
-                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-saas-cyan to-transparent"></div>
+            <div class="flex items-center justify-center mb-6 md:mb-10 opacity-30">
+                <div class="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-saas-cyan to-transparent"></div>
             </div>
 
             <!-- English Section -->
-            <div class="mb-8 max-w-4xl mx-auto">
-                <div class="font-body text-base md:text-lg leading-relaxed space-y-5 text-slate-400 text-center italic font-light">
+            <div class="mb-4 md:mb-8 max-w-4xl mx-auto">
+                <div class="font-body text-sm sm:text-base md:text-lg leading-relaxed space-y-4 md:space-y-5 text-slate-400 text-center italic font-light">
                     <p>"Peace be upon him who follows the guidance. To proceed: Praise be to Allah who has dispersed your attendants, stripped you of your kingdom, and weakened your plot. Verily, whoever prays our prayer, faces our Qiblah (direction of prayer), and eats our slaughtered meat, then that is a Muslim who has the same rights as we have, and the same obligations as we have.</p>
                     <p>To proceed: When my letter reaches you, send me hostages, secure from me the covenant of protection (Dhimmah), and pay me the Jizyah (tax). Otherwise, by Allah, other than Whom there is no deity, I will surely send to you a people who love death just as you love life, and who desire the Hereafter just as you desire this world."</p>
                     <p class="text-saas-cyan/80">So when they read the letter, they began to marvel (were astonished).</p>
@@ -207,16 +219,16 @@
 
         </div>
 
-        <!-- Carousel / UI Dots Indicator (For visual flair like the image) -->
-        <div class="flex space-x-2 mt-8">
-            <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-saas-cyan shadow-[0_0_8px_rgba(6,182,212,0.8)]"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+        <!-- Carousel / UI Dots Indicator -->
+        <div class="flex space-x-2 mt-6 md:mt-8">
+            <div class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-slate-600"></div>
+            <div class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-saas-cyan shadow-[0_0_8px_rgba(6,182,212,0.8)]"></div>
+            <div class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-slate-600"></div>
         </div>
 
         <!-- Copyright Footer -->
-        <footer class="mt-12 text-center pb-8">
-            <p class="font-body text-xs text-slate-600 tracking-wider uppercase">&copy; 2026 [Tomar Naam]. All Rights Reserved.</p>
+        <footer class="mt-8 md:mt-12 text-center pb-4 md:pb-8">
+            <p class="font-body text-[10px] md:text-xs text-slate-600 tracking-wider uppercase">&copy; 2026 [Tomar Naam]. All Rights Reserved.</p>
         </footer>
 
     </main>
