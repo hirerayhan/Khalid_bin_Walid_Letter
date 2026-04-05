@@ -5,30 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Letter of Khalid bin Al-Waleed</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Serif+Bengali:wght@400;600;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Noto+Serif+Bengali:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'islamic-green': '#0f4c3a',
+                        'saas-dark': '#0b1121',
+                        'saas-card': '#131b2f',
+                        'saas-cyan': '#06b6d4',
+                        'saas-cyan-dark': '#0891b2',
                         'islamic-gold': '#d4af37',
-                        'sand': '#fdfbf7',
                     },
                     fontFamily: {
                         'arabic': ['"Amiri Quran"', 'serif'],
                         'bengali': ['"Noto Serif Bengali"', 'serif'],
-                        'english': ['Cinzel', 'serif'],
-                        'body': ['system-ui', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
                     },
                     animation: {
-                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                        'swing': 'swing 5s ease-in-out infinite alternate',
                     },
                     keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        glow: {
+                            '0%': { filter: 'drop-shadow(0 0 5px rgba(6, 182, 212, 0.2))' },
+                            '100%': { filter: 'drop-shadow(0 0 15px rgba(6, 182, 212, 0.6))' }
+                        },
+                        swing: {
+                            '0%': { transform: 'rotate(-3deg)', transformOrigin: 'top center' },
+                            '100%': { transform: 'rotate(3deg)', transformOrigin: 'top center' }
                         }
                     }
                 }
@@ -37,108 +47,147 @@
     </script>
     <style>
         body {
-            background-color: #f4f1ea;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-color: #0b1121;
+            /* Islamic / Ramadan Background Pattern */
+            background-image: 
+                radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 15% 70%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306b6d4' fill-opacity='0.03'%3E%3Cpath d='M30 0l2.5 12.5L45 15l-12.5 2.5L30 30l-2.5-12.5L15 15l12.5-2.5L30 0zM15 30l1.5 7.5L24 39l-7.5 1.5L15 48l-1.5-7.5L6 39l7.5-1.5L15 30zM45 30l1.5 7.5L54 39l-7.5 1.5L45 48l-1.5-7.5L36 39l7.5-1.5L45 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
-        .arch-card {
-            border-top-left-radius: 3rem;
-            border-top-right-radius: 3rem;
-            border-bottom-left-radius: 0.5rem;
-            border-bottom-right-radius: 0.5rem;
+        .glass-panel {
+            background: rgba(19, 27, 47, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(6, 182, 212, 0.05);
         }
 
-        .delay-100 { animation-delay: 100ms; }
-        .delay-300 { animation-delay: 300ms; }
-        .delay-500 { animation-delay: 500ms; }
-        
-        .text-glow {
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        .text-justify-center-last {
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        /* Subtle scrollbar for elegant look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1121;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
         }
     </style>
 </head>
-<body class="min-h-screen text-gray-800 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+<body class="min-h-screen font-body text-slate-300 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center relative overflow-x-hidden">
 
-    <div class="max-w-4xl w-full space-y-12">
+    <!-- Ramadan Theme Decorations (Background Layer) -->
+    <div class="fixed -top-10 -right-10 w-64 h-64 md:w-[22rem] md:h-[22rem] opacity-[0.08] pointer-events-none z-0">
+        <svg viewBox="0 0 100 100" class="text-saas-cyan w-full h-full animate-glow" fill="currentColor">
+            <!-- Crescent Moon -->
+            <path d="M 55 15 A 35 35 0 1 0 85 55 A 25 25 0 1 1 55 15 Z" />
+            <!-- Little Star -->
+            <path d="M 72 25 L 73.5 30 L 78.5 30 L 74.5 33 L 76 38 L 72 35 L 68 38 L 69.5 33 L 65.5 30 L 70.5 30 Z" />
+        </svg>
+    </div>
+
+    <!-- Hanging Lanterns -->
+    <div class="fixed top-0 left-4 md:left-20 flex space-x-6 md:space-x-10 opacity-15 pointer-events-none z-0">
+        <svg class="w-10 h-40 md:h-48 text-saas-cyan animate-swing" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="12" y1="0" x2="12" y2="35" stroke-opacity="0.5"/>
+            <path d="M8 35 H16 L18 42 V55 L16 62 H8 L6 55 V42 Z" fill="rgba(6, 182, 212, 0.1)"/>
+            <path d="M6 42 H18 M6 55 H18" />
+            <line x1="12" y1="62" x2="12" y2="68" />
+            <path d="M9 68 H15 L12 73 Z" fill="currentColor"/>
+        </svg>
+        <svg class="w-8 h-32 md:h-36 text-saas-cyan animate-swing mt-8" style="animation-duration: 4s;" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="12" y1="0" x2="12" y2="25" stroke-opacity="0.5"/>
+            <path d="M8 25 H16 L18 30 V40 L16 45 H8 L6 40 V30 Z" fill="rgba(6, 182, 212, 0.1)"/>
+            <path d="M6 30 H18 M6 40 H18" />
+            <line x1="12" y1="45" x2="12" y2="50" />
+            <path d="M10 50 H14 L12 54 Z" fill="currentColor"/>
+        </svg>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl w-full z-10 animate-fade-in flex flex-col items-center">
         
-        <!-- Header Section -->
-        <header class="text-center space-y-4 opacity-0 animate-fade-in-up text-islamic-green relative">
-            <div class="absolute inset-0 flex justify-center items-center -z-10">
-                <div class="w-48 h-48 bg-islamic-gold/10 rounded-full blur-2xl animate-pulse-slow"></div>
-            </div>
-            <h1 class="font-arabic text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-glow">خَالِد بن الوَلِيد</h1>
-            <h2 class="font-english text-xl md:text-2xl text-islamic-gold font-bold tracking-wider">(Khalid bin Al-Waleed)</h2>
-            <div class="w-24 h-1 bg-islamic-gold mx-auto my-4 rounded"></div>
-            <h3 class="font-arabic text-2xl md:text-3xl font-semibold mt-4">رِسَالَةُ خَالِدٍ إِلَى مَرَازِبَةِ فَارِسَ</h3>
-            <p class="font-english text-sm md:text-base text-gray-600 italic">Message of Khalid to the Marzubans [Governors] of Persia</p>
-        </header>
+        <!-- The SaaS Style Card Frame -->
+        <div class="glass-panel rounded-3xl p-8 sm:p-12 md:p-16 w-full relative mt-8">
+            
+            <!-- Grand Header Block -->
+            <div class="text-center mb-14 pb-10 border-b border-slate-800/60 relative">
+                <!-- Subtle background glow for the header -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-saas-cyan/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
-        <!-- Arabic Section -->
-        <section class="opacity-0 animate-fade-in-up delay-100 transform transition duration-500 hover:scale-[1.02]">
-            <div class="bg-white shadow-xl arch-card border-t-4 border-islamic-green overflow-hidden relative">
-                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-islamic-gold to-transparent opacity-50"></div>
-                <div class="p-8 md:p-10 text-center">
-                    <span class="inline-block px-4 py-1 rounded-full bg-islamic-green/10 text-islamic-green font-english text-xs font-bold tracking-widest uppercase mb-6 border border-islamic-green/20">Arabic Transcription</span>
-                    <p class="font-arabic text-3xl md:text-4xl leading-[4rem] md:leading-[5.5rem] text-center text-gray-900" dir="rtl">
-                        سَلَامٌ عَلَى مَنِ اتَّبَعَ الْهُدَى،<br>
-                        أَمَّا بَعْدُ: فَالْحَمْدُ لِلَّهِ الَّذِي<br>
-                        فَضَّ خِدْمَتَكُمْ، وَسَلَبَ<br>
-                        مُلْكَكُمْ، وَوَهَّنَ كَيْدَكُمْ،<br>
-                        وَإِنَّهُ مَنْ صَلَّى صَلَاتَنَا،<br>
-                        وَاسْتَقْبَلَ قِبْلَتَنَا، وَأَكَلَ<br>
-                        ذَبِيحَتَنَا، فَذَلِكَ الْمُسْلِمُ الَّذِي<br>
-                        لَهُ مَا لَنَا، وَعَلَيْهِ مَا عَلَيْنَا.
-                        <br><br>
-                        أَمَّا بَعْدُ: فَإِذَا جَاءَكُمْ كِتَابِي فَابْعَثُوا<br>
-                        إِلَيَّ بِالرَّهْنِ، وَاعْتَقِدُوا مِنِّي الذِّمَّةَ،<br>
-                        وَأَدُّوا إِلَيَّ الْجِزْيَةَ، وَإِلَّا فَوَاللَّهِ الَّذِي<br>
-                        لَا إِلَهَ غَيْرُهُ، لَأَبْعَثَنَّ إِلَيْكُمْ<br>
-                        قَوْمًا يُحِبُّونَ الْمَوْتَ كَمَا تُحِبُّونَ الْحَيَاةَ،<br>
-                        وَيَرْغَبُونَ فِي الْآخِرَةِ كَمَا تَرْغَبُونَ فِي الدُّنْيَا.
-                        <br><br>
-                        <span class="text-islamic-gold block mt-2">فَلَمَّا قَرَءُوا الْكِتَابَ أَخَذُوا يَتَعَجَّبُونَ.</span>
-                    </p>
+                <h1 class="font-arabic text-5xl md:text-6xl text-saas-cyan mb-4 animate-glow" style="line-height: normal;">خَالِد بن الوَلِيد</h1>
+                <h2 class="font-body font-bold text-lg md:text-xl text-islamic-gold tracking-[0.2em] uppercase mb-8">(KHALID BIN AL-WALEED)</h2>
+
+                <div class="w-16 h-1 bg-islamic-gold mx-auto mb-8 rounded-full opacity-80"></div>
+
+                <h3 class="font-arabic text-3xl md:text-4xl text-slate-100 mb-4" style="line-height: normal;">رِسَالَةُ خَالِدٍ إِلَى مَرَازِبَةِ فَارِسَ</h3>
+                <p class="font-body italic text-xs md:text-sm text-slate-400 tracking-[0.15em] uppercase">Message of Khalid to the Marzubans [Governors] of Persia</p>
+            </div>
+
+            <!-- Arabic Section -->
+            <div class="mb-12">
+                <p class="font-arabic text-3xl md:text-4xl lg:text-[2.75rem] leading-[4.5rem] md:leading-[6rem] text-slate-100 text-justify-center-last" dir="rtl">
+                    سَلَامٌ عَلَى مَنِ اتَّبَعَ الْهُدَى، أَمَّا بَعْدُ: فَالْحَمْدُ لِلَّهِ الَّذِي فَضَّ خِدْمَتَكُمْ، وَسَلَبَ مُلْكَكُمْ، وَوَهَّنَ كَيْدَكُمْ، وَإِنَّهُ مَنْ صَلَّى صَلَاتَنَا، وَاسْتَقْبَلَ قِبْلَتَنَا، وَأَكَلَ ذَبِيحَتَنَا، فَذَلِكَ الْمُسْلِمُ الَّذِي لَهُ مَا لَنَا، وَعَلَيْهِ مَا عَلَيْنَا.
+                    <br><br>
+                    أَمَّا بَعْدُ: فَإِذَا جَاءَكُمْ كِتَابِي فَابْعَثُوا إِلَيَّ بِالرَّهْنِ، وَاعْتَقِدُوا مِنِّي الذِّمَّةَ، وَأَدُّوا إِلَيَّ الْجِزْيَةَ، وَإِلَّا فَوَاللَّهِ الَّذِي لَا إِلَهَ غَيْرُهُ، لَأَبْعَثَنَّ إِلَيْكُمْ قَوْمًا يُحِبُّونَ الْمَوْتَ كَمَا تُحِبُّونَ الْحَيَاةَ، وَيَرْغَبُونَ فِي الْآخِرَةِ كَمَا تَرْغَبُونَ فِي الدُّنْيَا.
+                    <br><br>
+                    <span class="text-saas-cyan block mt-4 font-normal">فَلَمَّا قَرَءُوا الْكِتَابَ أَخَذُوا يَتَعَجَّبُونَ.</span>
+                </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="flex items-center justify-center mb-10 opacity-30">
+                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-saas-cyan to-transparent"></div>
+            </div>
+
+            <!-- Bengali Section -->
+            <div class="mb-10 max-w-4xl mx-auto">
+                <div class="font-bengali text-lg md:text-xl leading-relaxed space-y-5 text-slate-300 text-center font-light">
+                    <p>যারা হেদায়েতের অনুসরণ করে তাদের ওপর শান্তি বর্ষিত হোক। অতঃপর: সমস্ত প্রশংসা আল্লাহর জন্য, যিনি তোমাদের সেবকদের ছিন্নভিন্ন করে দিয়েছেন, তোমাদের রাজত্ব ছিনিয়ে নিয়েছেন এবং তোমাদের ষড়যন্ত্রকে দুর্বল করে দিয়েছেন। নিশ্চয়ই যে ব্যক্তি আমাদের মতো সালাত আদায় করে, আমাদের কিবলার দিকে মুখ করে এবং আমাদের জবাই করা প্রাণীর গোশত খায়, সে-ই মুসলিম। আমাদের যা অধিকার আছে, তারও তা-ই অধিকার; আর আমাদের ওপর যা দায়িত্ব আছে, তার ওপরও তা-ই দায়িত্ব।</p>
+                    <p>অতঃপর: যখন আমার এই পত্র তোমাদের কাছে পৌঁছাবে, তখন আমার কাছে জিম্মি (নিরাপত্তার গ্যারান্টি হিসেবে লোক) পাঠাও, আমার কাছ থেকে নিরাপত্তার প্রতিশ্রুতি (জিম্মাহ) গ্রহণ করো এবং আমাকে জিযিয়া প্রদান করো। অন্যথায়, সেই আল্লাহর কসম, যিনি ছাড়া আর কোনো মাবুদ নেই, আমি তোমাদের বিরুদ্ধে এমন এক সম্প্রদায়কে পাঠাব, যারা মৃত্যুকে ততটাই ভালোবাসে যতটা তোমরা জীবনকে ভালোবাসো, এবং তারা আখেরাতকে ততটাই কামনা করে যতটা তোমরা দুনিয়াকে কামনা করো।</p>
+                    <p class="font-medium text-saas-cyan">অতঃপর যখন তারা পত্রটি পড়ল, তখন তারা চরম বিস্ময়াভিভূত হলো।</p>
                 </div>
             </div>
-        </section>
 
-        <!-- Bengali Section -->
-        <section class="opacity-0 animate-fade-in-up delay-300 transform transition duration-500 hover:scale-[1.02]">
-            <div class="bg-islamic-green text-sand shadow-xl rounded-2xl border border-islamic-gold/30 overflow-hidden relative">
-                <div class="p-8 md:p-10">
-                    <div class="flex items-center justify-between mb-6 border-b border-sand/20 pb-4">
-                        <span class="font-bengali text-lg font-semibold text-islamic-gold">বাংলা অনুবাদ</span>
-                    </div>
-                    <div class="font-bengali text-lg md:text-xl leading-relaxed space-y-4 text-justify text-sand/90">
-                        <p>যারা হেদায়েতের অনুসরণ করে তাদের ওপর শান্তি বর্ষিত হোক। অতঃপর: সমস্ত প্রশংসা আল্লাহর জন্য, যিনি তোমাদের সেবকদের ছিন্নভিন্ন করে দিয়েছেন, তোমাদের রাজত্ব ছিনিয়ে নিয়েছেন এবং তোমাদের ষড়যন্ত্রকে দুর্বল করে দিয়েছেন। নিশ্চয়ই যে ব্যক্তি আমাদের মতো সালাত আদায় করে, আমাদের কিবলার দিকে মুখ করে এবং আমাদের জবাই করা প্রাণীর গোশত খায়, সে-ই মুসলিম। আমাদের যা অধিকার আছে, তারও তা-ই অধিকার; আর আমাদের ওপর যা দায়িত্ব আছে, তার ওপরও তা-ই দায়িত্ব।</p>
-                        <p>অতঃপর: যখন আমার এই পত্র তোমাদের কাছে পৌঁছাবে, তখন আমার কাছে জিম্মি (নিরাপত্তার গ্যারান্টি হিসেবে লোক) পাঠাও, আমার কাছ থেকে নিরাপত্তার প্রতিশ্রুতি (জিম্মাহ) গ্রহণ করো এবং আমাকে জিযিয়া প্রদান করো। অন্যথায়, সেই আল্লাহর কসম, যিনি ছাড়া আর কোনো মাবুদ নেই, আমি তোমাদের বিরুদ্ধে এমন এক সম্প্রদায়কে পাঠাব, যারা মৃত্যুকে ততটাই ভালোবাসে যতটা তোমরা জীবনকে ভালোবাসো, এবং তারা আখেরাতকে ততটাই কামনা করে যতটা তোমরা দুনিয়াকে কামনা করো।</p>
-                        <p class="font-semibold text-islamic-gold">অতঃপর যখন তারা পত্রটি পড়ল, তখন তারা চরম বিস্ময়াভিভূত হলো।</p>
-                    </div>
+            <!-- Divider -->
+            <div class="flex items-center justify-center mb-10 opacity-30">
+                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-saas-cyan to-transparent"></div>
+            </div>
+
+            <!-- English Section -->
+            <div class="mb-8 max-w-4xl mx-auto">
+                <div class="font-body text-base md:text-lg leading-relaxed space-y-5 text-slate-400 text-center italic font-light">
+                    <p>"Peace be upon him who follows the guidance. To proceed: Praise be to Allah who has dispersed your attendants, stripped you of your kingdom, and weakened your plot. Verily, whoever prays our prayer, faces our Qiblah (direction of prayer), and eats our slaughtered meat, then that is a Muslim who has the same rights as we have, and the same obligations as we have.</p>
+                    <p>To proceed: When my letter reaches you, send me hostages, secure from me the covenant of protection (Dhimmah), and pay me the Jizyah (tax). Otherwise, by Allah, other than Whom there is no deity, I will surely send to you a people who love death just as you love life, and who desire the Hereafter just as you desire this world."</p>
+                    <p class="text-saas-cyan/80">So when they read the letter, they began to marvel (were astonished).</p>
                 </div>
             </div>
-        </section>
 
-        <!-- English Section -->
-        <section class="opacity-0 animate-fade-in-up delay-500 transform transition duration-500 hover:scale-[1.02]">
-            <div class="bg-white shadow-xl rounded-2xl border-l-4 border-islamic-gold overflow-hidden">
-                <div class="p-8 md:p-10">
-                    <div class="flex items-center mb-6">
-                        <span class="inline-block px-4 py-1 rounded bg-gray-100 text-gray-600 font-english text-xs font-bold tracking-widest uppercase">English Translation</span>
-                    </div>
-                    <div class="font-body text-base md:text-lg leading-relaxed space-y-4 text-gray-700">
-                        <p>"Peace be upon him who follows the guidance. To proceed: Praise be to Allah who has dispersed your attendants, stripped you of your kingdom, and weakened your plot. Verily, whoever prays our prayer, faces our Qiblah (direction of prayer), and eats our slaughtered meat, then that is a Muslim who has the same rights as we have, and the same obligations as we have.</p>
-                        <p>To proceed: When my letter reaches you, send me hostages, secure from me the covenant of protection (Dhimmah), and pay me the Jizyah (tax). Otherwise, by Allah, other than Whom there is no deity, I will surely send to you a people who love death just as you love life, and who desire the Hereafter just as you desire this world."</p>
-                        <p class="italic font-medium text-islamic-green">So when they read the letter, they began to marvel (were astonished).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <footer class="text-center py-6 opacity-0 animate-fade-in-up delay-500">
-            <svg class="w-8 h-8 mx-auto text-islamic-gold opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg>
+        <!-- Carousel / UI Dots Indicator (For visual flair like the image) -->
+        <div class="flex space-x-2 mt-8">
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-saas-cyan shadow-[0_0_8px_rgba(6,182,212,0.8)]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+        </div>
+
+        <!-- Copyright Footer -->
+        <footer class="mt-12 text-center pb-8">
+            <p class="font-body text-xs text-slate-600 tracking-wider uppercase">&copy; 2026 [Tomar Naam]. All Rights Reserved.</p>
         </footer>
 
-    </div>
+    </main>
 
 </body>
 </html>
