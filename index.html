@@ -66,12 +66,21 @@
             user-select: none; /* Standard */
         }
         
+        /* Mobile-first glass panel (No heavy blur to prevent crashes) */
         .glass-panel {
-            background: rgba(19, 27, 47, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(19, 27, 47, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(6, 182, 212, 0.05);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Desktop glass panel with premium blur */
+        @media (min-width: 768px) {
+            .glass-panel {
+                background: rgba(19, 27, 47, 0.7);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(6, 182, 212, 0.05);
+            }
         }
 
         .text-justify-center-last {
@@ -86,9 +95,9 @@
             }
         }
 
-        /* Subtle scrollbar for elegant look */
+        /* Subtle scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 4px;
         }
         @media (min-width: 768px) {
             ::-webkit-scrollbar {
@@ -107,32 +116,27 @@
         }
     </style>
 </head>
-<!-- Disable Context Menu, Copy, Paste, and Cut in the body tag -->
 <body class="min-h-screen font-body text-slate-300 py-8 md:py-12 px-3 sm:px-6 lg:px-8 flex flex-col items-center justify-center relative overflow-x-hidden" oncontextmenu="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
 
-    <!-- Hidden Audio Element -->
     <audio id="khalid-audio" src="https://raw.githubusercontent.com/hirerayhan/Khalid_bin_Walid_Letter/main/Khalid%20ibn%20al-Walids%20letter%20to%20the%20Persian%20King%20%20islamichistory%20%20islam%20%20shortvideo%20%20muslim.mp3" preload="none"></audio>
 
-    <!-- Ramadan Theme Decorations (Background Layer) -->
-    <div class="fixed -top-10 -right-10 w-48 h-48 md:w-[22rem] md:h-[22rem] opacity-[0.05] md:opacity-[0.08] pointer-events-none z-0">
+    <!-- Background Decorations - Hidden on mobile to prevent crashes -->
+    <div class="hidden md:block fixed -top-10 -right-10 w-[22rem] h-[22rem] opacity-[0.08] pointer-events-none z-0">
         <svg viewBox="0 0 100 100" class="text-saas-cyan w-full h-full animate-glow" fill="currentColor">
-            <!-- Crescent Moon -->
             <path d="M 55 15 A 35 35 0 1 0 85 55 A 25 25 0 1 1 55 15 Z" />
-            <!-- Little Star -->
             <path d="M 72 25 L 73.5 30 L 78.5 30 L 74.5 33 L 76 38 L 72 35 L 68 38 L 69.5 33 L 65.5 30 L 70.5 30 Z" />
         </svg>
     </div>
 
-    <!-- Hanging Lanterns -->
-    <div class="fixed top-0 left-2 md:left-20 flex space-x-3 md:space-x-10 opacity-10 md:opacity-15 pointer-events-none z-0">
-        <svg class="w-6 h-24 md:w-10 md:h-48 text-saas-cyan animate-swing" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
+    <div class="hidden md:flex fixed top-0 left-20 space-x-10 opacity-15 pointer-events-none z-0">
+        <svg class="w-10 h-48 text-saas-cyan animate-swing" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="12" y1="0" x2="12" y2="35" stroke-opacity="0.5"/>
             <path d="M8 35 H16 L18 42 V55 L16 62 H8 L6 55 V42 Z" fill="rgba(6, 182, 212, 0.1)"/>
             <path d="M6 42 H18 M6 55 H18" />
             <line x1="12" y1="62" x2="12" y2="68" />
             <path d="M9 68 H15 L12 73 Z" fill="currentColor"/>
         </svg>
-        <svg class="w-5 h-20 md:w-8 md:h-36 text-saas-cyan animate-swing mt-4 md:mt-8" style="animation-duration: 4s;" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg class="w-8 h-36 text-saas-cyan animate-swing mt-8" style="animation-duration: 4s;" viewBox="0 0 24 100" fill="none" stroke="currentColor" stroke-width="1.5">
             <line x1="12" y1="0" x2="12" y2="25" stroke-opacity="0.5"/>
             <path d="M8 25 H16 L18 30 V40 L16 45 H8 L6 40 V30 Z" fill="rgba(6, 182, 212, 0.1)"/>
             <path d="M6 30 H18 M6 40 H18" />
@@ -141,18 +145,16 @@
         </svg>
     </div>
 
-    <!-- Main Content Container -->
+    <!-- Main Content -->
     <main class="max-w-5xl w-full z-10 animate-fade-in flex flex-col items-center">
         
-        <!-- The SaaS Style Card Frame -->
         <div class="glass-panel rounded-2xl sm:rounded-3xl p-5 sm:p-10 md:p-16 w-full relative mt-4 md:mt-8">
             
-            <!-- Grand Header Block -->
             <div class="text-center mb-8 md:mb-10 pb-6 md:pb-8 border-b border-slate-800/60 relative">
-                <!-- Subtle background glow for the header -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-48 md:h-48 bg-saas-cyan/10 rounded-full blur-2xl md:blur-3xl -z-10 pointer-events-none"></div>
+                <!-- Heavy glow hidden on mobile -->
+                <div class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-saas-cyan/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
-                <h1 class="font-arabic text-4xl sm:text-5xl md:text-6xl text-saas-cyan mb-3 md:mb-4 animate-glow" style="line-height: normal;">خَالِد بن الوَلِيد</h1>
+                <h1 class="font-arabic text-4xl sm:text-5xl md:text-6xl text-saas-cyan mb-3 md:mb-4 md:animate-glow" style="line-height: normal;">خَالِد بن الوَلِيد</h1>
                 <h2 class="font-body font-bold text-base sm:text-lg md:text-xl text-islamic-gold tracking-[0.15em] md:tracking-[0.2em] uppercase mb-6 md:mb-8">(KHALID BIN AL-WALEED)</h2>
 
                 <div class="w-12 md:w-16 h-1 bg-islamic-gold mx-auto mb-6 md:mb-8 rounded-full opacity-80"></div>
@@ -161,22 +163,19 @@
                 <p class="font-body italic text-[10px] sm:text-xs md:text-sm text-slate-400 tracking-[0.1em] md:tracking-[0.15em] uppercase">Message of Khalid to the Marzubans [Governors] of Persia</p>
             </div>
 
-            <!-- Custom Audio Player Button -->
+            <!-- Audio Player -->
             <div class="flex justify-center mb-8 md:mb-12">
-                <button id="play-btn" class="flex items-center gap-2 md:gap-3 px-5 py-2.5 md:px-6 md:py-3 rounded-full glass-panel border border-saas-cyan/20 hover:border-saas-cyan text-saas-cyan transition-all duration-300 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] group">
+                <button id="play-btn" class="flex items-center gap-2 md:gap-3 px-5 py-2.5 md:px-6 md:py-3 rounded-full glass-panel border border-saas-cyan/20 hover:border-saas-cyan text-saas-cyan transition-all duration-300 md:hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] group">
                     <div class="relative flex items-center justify-center w-5 h-5 md:w-6 md:h-6">
-                        <!-- Play Icon -->
                         <svg id="icon-play" class="w-4 h-4 md:w-5 md:h-5 absolute transition-opacity duration-300 opacity-100" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z"/>
                         </svg>
-                        <!-- Pause Icon -->
                         <svg id="icon-pause" class="w-4 h-4 md:w-5 md:h-5 absolute transition-opacity duration-300 opacity-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
                         </svg>
                     </div>
                     <span id="audio-text" class="font-body font-medium text-xs md:text-sm tracking-widest uppercase">Listen Audio</span>
                     
-                    <!-- Sound Wave Animation (Visible when playing) -->
                     <div id="sound-waves" class="hidden flex gap-1 items-center ml-1 md:ml-2 h-3 md:h-4">
                         <div class="w-0.5 md:w-1 h-full bg-saas-cyan rounded-full animate-[bounce_1s_infinite]"></div>
                         <div class="w-0.5 md:w-1 h-3/4 bg-saas-cyan rounded-full animate-[bounce_1s_infinite_0.2s]"></div>
@@ -196,7 +195,6 @@
                 </p>
             </div>
 
-            <!-- Divider -->
             <div class="flex items-center justify-center mb-6 md:mb-10 opacity-30">
                 <div class="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-saas-cyan to-transparent"></div>
             </div>
@@ -210,7 +208,6 @@
                 </div>
             </div>
 
-            <!-- Divider -->
             <div class="flex items-center justify-center mb-6 md:mb-10 opacity-30">
                 <div class="w-16 md:w-24 h-[1px] bg-gradient-to-r from-transparent via-saas-cyan to-transparent"></div>
             </div>
@@ -226,23 +223,19 @@
 
         </div>
 
-        <!-- Carousel / UI Dots Indicator -->
         <div class="flex space-x-2 mt-6 md:mt-8">
             <div class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-slate-600"></div>
             <div class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-saas-cyan shadow-[0_0_8px_rgba(6,182,212,0.8)]"></div>
             <div class="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full bg-slate-600"></div>
         </div>
 
-        <!-- Copyright Footer -->
         <footer class="mt-8 md:mt-12 text-center pb-4 md:pb-8">
             <p class="font-body text-[10px] md:text-xs text-slate-600 tracking-wider uppercase">&copy; 2026 RAYHAN BISWAS. All Rights Reserved.</p>
         </footer>
 
     </main>
 
-    <!-- JavaScript for Audio Player & Security -->
     <script>
-        // --- Audio Player Logic ---
         const audio = document.getElementById('khalid-audio');
         const playBtn = document.getElementById('play-btn');
         const iconPlay = document.getElementById('icon-play');
@@ -253,7 +246,6 @@
         playBtn.addEventListener('click', () => {
             if (audio.paused) {
                 audio.play();
-                // Play state UI updates
                 iconPlay.classList.replace('opacity-100', 'opacity-0');
                 iconPause.classList.replace('opacity-0', 'opacity-100');
                 audioText.innerText = 'Pause Audio';
@@ -261,7 +253,6 @@
                 playBtn.classList.add('animate-pulse-glow', 'border-saas-cyan');
             } else {
                 audio.pause();
-                // Pause state UI updates
                 iconPause.classList.replace('opacity-100', 'opacity-0');
                 iconPlay.classList.replace('opacity-0', 'opacity-100');
                 audioText.innerText = 'Listen Audio';
@@ -270,7 +261,6 @@
             }
         });
 
-        // Reset UI when audio finishes
         audio.addEventListener('ended', () => {
             iconPause.classList.replace('opacity-100', 'opacity-0');
             iconPlay.classList.replace('opacity-0', 'opacity-100');
@@ -279,24 +269,19 @@
             playBtn.classList.remove('animate-pulse-glow', 'border-saas-cyan');
         });
 
-        // --- Security Logic (Disable Inspect/Copy/Paste Shortcuts) ---
         document.addEventListener('keydown', function(e) {
-            // Disable F12
             if(e.key === 'F12' || e.keyCode === 123) {
                 e.preventDefault();
                 return false;
             }
-            // Disable Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C (Inspect/Console tools)
             if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
                 e.preventDefault();
                 return false;
             }
-            // Disable Ctrl+U (View Source)
             if(e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
                 e.preventDefault();
                 return false;
             }
-            // Disable Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+A (Copy, Paste, Cut, Select All)
             if(e.ctrlKey && (e.key === 'C' || e.key === 'c' || e.key === 'V' || e.key === 'v' || e.key === 'X' || e.key === 'x' || e.key === 'A' || e.key === 'a')) {
                 e.preventDefault();
                 return false;
